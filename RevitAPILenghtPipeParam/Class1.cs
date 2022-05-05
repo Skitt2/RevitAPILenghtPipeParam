@@ -28,19 +28,16 @@ namespace RevitAPILenghtPipeParam
             foreach (var selectedElement in selectedElementRefList)
             {
                 Pipe oPipe = doc.GetElement(selectedElement) as Pipe;
-
                 double lengthParam = oPipe.get_Parameter(BuiltInParameter.CURVE_ELEM_LENGTH).AsDouble();
-
                 double extraLength = lengthParam * 1.1 / 1000;
-
                 var categorySet = new CategorySet();
                 categorySet.Insert(Category.GetCategory(doc, BuiltInCategory.OST_PipeCurves));
 
                 using (Transaction ts = new Transaction(doc, "Set parameter"))
                 {
                     ts.Start();
-                    Parameter TestParameter = oPipe.LookupParameter("Длина с коэф 1.1");
-                    TestParameter.Set(extraLength);
+                    Parameter extraLengthParameter = oPipe.LookupParameter("TestParameter");
+                    extraLengthParameter.Set(extraLength);
 
                     ts.Commit();
                 }
