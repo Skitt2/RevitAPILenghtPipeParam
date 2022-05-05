@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>"C:\RevitAPITrainig\RevitAPILenghtPipeParam.dll"</Assembly>
+    <AddInId>5020081A-BC4E-4FE0-831C-9006AC918E2F</AddInId>
+    <FullClassName>RevitAPILenghtPipeParam.Main</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <Text>Запись в параметры длины с коэф 1.1</Text>
+  </AddIn>
+</RevitAddIns>
